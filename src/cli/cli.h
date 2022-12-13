@@ -12,14 +12,14 @@
 #define SEARCH_IN_FILE 5
 #define SHOW_FILE 6
 
-void run_cli();
-void show_menu(LinkedList* list);
-void select_option(LinkedList* list, int input);
-void insert_file(LinkedList* list);
-void remove_file(LinkedList* list);
-void show_files(LinkedList* list);
-void search_file(LinkedList* list);
-void search_in_file(LinkedList* list);
-void show_file(LinkedList* list);
+void run_cli(LinkedList* list);
+static void show_menu(LinkedList* list);
+static void select_option(LinkedList* list, int input);
+static void insert_file(LinkedList* list);
+static void remove_file(LinkedList* list);
+static void show_files(LinkedList* list);
+static void search_file(LinkedList* list);
+static void search_in_file(LinkedList* list);
+static void show_file(LinkedList* list);
 
 #endif

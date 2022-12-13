@@ -1,11 +1,11 @@
 #include "cli.h"
 
-void run_cli() {
-    LinkedList* list = new_LinkedList();
+void run_cli(LinkedList* list) {
+    system("clear");
     show_menu(list);
 }
 
-void show_menu(LinkedList* list) {
+static void show_menu(LinkedList* list) {
     int input = 0;
 
     while (
@@ -17,6 +17,7 @@ void show_menu(LinkedList* list) {
         input != 6
     ) {
         printf("----Bem vindo ao gerenciador de arquivos!----\n");
+        printf("(0) Sair\n");
         printf("(1) Inserir um novo arquivo\n");
         printf("(2) Remover arquivo\n");
         printf("(3) Mostrar arquivos\n");
@@ -26,13 +27,15 @@ void show_menu(LinkedList* list) {
         printf("Selecionar opção: ");
         scanf("%d", &input);
         system("clear");
+
+        if (input == 0) exit(0);
     }
-    
+
     select_option(list, input);
 }
 
 
-void select_option(LinkedList* list, int input) {
+static void select_option(LinkedList* list, int input) {
     switch (input)
     {
         case INSERT_FILE:
@@ -58,26 +61,54 @@ void select_option(LinkedList* list, int input) {
     }
 }
 
-void insert_file(LinkedList* list) {
+static void insert_file(LinkedList* list) {
+    system("clear");
+
+    printf("Digite o caminho para o arquivo: ");
+    char file_name[50];
+    scanf("%s", file_name);
+
+    FILE* file = fopen(file_name, "r");
+
+    if (file == NULL) {
+        fprintf(stderr, "Error in opening file!\n");
+        sleep(5);
+        return;
+    }
+
+    char file_content[SIZE_FILE_CONTENT];
+
+    while (!feof(file)) {
+        fgets(file_content, SIZE_FILE_CONTENT, file);
+        insert_in(list, file_content, file_name);
+    }
+
+    fclose(file);
+
+    printf("Arquivo salvo com sucesso!\n");
+    sleep(5);
+}
+
+static void remove_file(LinkedList* list) {
 
 }
 
-void remove_file(LinkedList* list) {
+static void show_files(LinkedList* list) {
+    int counter = 0;
+
+    Node* current_file = list->head->next;
+
+    
+}
+
+static void search_file(LinkedList* list) {
 
 }
 
-void show_files(LinkedList* list) {
+static void search_in_file(LinkedList* list) {
 
 }
 
-void search_file(LinkedList* list) {
-
-}
-
-void search_in_file(LinkedList* list) {
-
-}
-
-void show_file(LinkedList* list) {
+static void show_file(LinkedList* list) {
 
 }
