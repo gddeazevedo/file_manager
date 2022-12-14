@@ -127,5 +127,35 @@ static void search_in_file(LinkedList* list) {
 }
 
 static void show_file(LinkedList* list) {
+    printf("Digite o caminho para o arquivo que deseja verificar se está cadastrado: ");
+    char file_name[50];
+    scanf("%s", file_name);
 
+    FILE* file = fopen(file_name, "r");
+
+    if (file == NULL) {
+        fprintf(stderr, "Arquivo inexistente!\n");
+        sleep(5);
+        return;
+    }
+
+    fclose(file);
+
+    SearchContent* content = search(list, file_name);
+
+    Node* current = content->current;
+    int count = content->count;
+
+    if (current == NULL) {
+        printf("Arquivo não cadastrado!\n");
+        sleep(5);
+        return;
+    }
+
+    for (int i = 0; i < count; i++) {
+        printf("\t%s - %p - %d\n", current->file_name, current, count);
+        current = current->next;        
+    }
+
+    sleep(10);
 }
