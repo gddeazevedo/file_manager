@@ -94,11 +94,8 @@ static void remove_file(LinkedList* list) {
 }
 
 static void show_files(LinkedList* list) {
-    int counter = 0;
-
     Node* current_file = list->head->next;
 
-    
 }
 
 static void search_file(LinkedList* list) {

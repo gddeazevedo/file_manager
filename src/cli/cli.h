@@ -4,6 +4,7 @@
 #include "../linked_list/linked_list.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #define INSERT_FILE 1
 #define REMOVE_FILE 2
