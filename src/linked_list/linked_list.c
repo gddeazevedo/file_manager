@@ -52,7 +52,7 @@ SearchContent* search(LinkedList* list, char* file_name) {
         aux = aux->next;
     }
 
-    if (strcmp(aux->file_name, file_name) == 0) {
+    if (aux != NULL && strcmp(aux->file_name, file_name) == 0) {
         current = aux;
 
         while (aux != NULL && strcmp(aux->file_name, file_name) == 0) {
