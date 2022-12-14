@@ -6,9 +6,10 @@ void run_cli(LinkedList* list) {
 }
 
 static void show_menu(LinkedList* list) {
-    int input = 0;
+    int input = -1;
 
     while (
+        input != 0 &&
         input != 1 &&
         input != 2 &&
         input != 3 &&
@@ -27,8 +28,6 @@ static void show_menu(LinkedList* list) {
         printf("Selecionar opção: ");
         scanf("%d", &input);
         system("clear");
-
-        if (input == 0) exit(0);
     }
 
     select_option(list, input);
@@ -38,6 +37,9 @@ static void show_menu(LinkedList* list) {
 static void select_option(LinkedList* list, int input) {
     switch (input)
     {
+        case EXIT:
+            exit(0);
+            break;
         case INSERT_FILE:
             insert_file(list);
             break;
@@ -90,7 +92,25 @@ static void insert_file(LinkedList* list) {
 }
 
 static void remove_file(LinkedList* list) {
+    system("clear");
 
+    printf("Digite o caminho para o arquivo que deseja remover: ");
+    char file_name[50];
+    scanf("%s", file_name);
+
+    FILE* file = fopen(file_name, "r");
+
+    if (file == NULL) {
+        fprintf(stderr, "Arquivo inexistente!\n");
+        sleep(5);
+        return;
+    }
+
+    fclose(file);
+
+    remove_from(list, file_name);
+    printf("Arquivo removido com sucesso!\n");
+    sleep(5);
 }
 
 static void show_files(LinkedList* list) {
