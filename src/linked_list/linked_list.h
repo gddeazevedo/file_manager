@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAX_LENGTH 1000
 #define SIZE_FILE_CONTENT 256
@@ -15,22 +16,22 @@ typedef struct __node {
     struct __node* next;
 } Node;
 
-
-typedef struct {
-    Node* prev;
-    Node* current;
-} SearchContent;
-
 typedef struct {
     Node* head;
     Node* tail;
     int length;
 } LinkedList;
 
+typedef struct {
+    Node* prev;
+    Node* current;
+    int count;
+} SearchContent;
+
+
 LinkedList* new_LinkedList();
 void insert_in(LinkedList* list, char* content, char* file_name);
-void remove_from(LinkedList* list, char* file_name);
-Node* search(LinkedList* list, char* file_name);
-
+bool remove_from(LinkedList* list, char* file_name);
+SearchContent* search(LinkedList* list, char* file_name);
 
 #endif

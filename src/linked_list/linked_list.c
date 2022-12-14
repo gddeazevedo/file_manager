@@ -22,22 +22,50 @@ void insert_in(LinkedList* list, char* content, char* file_name) {
     list->length += 1;
 }
 
-void remove_from(LinkedList* list, char* file_name) {
-    Node* current = search(list, file_name);
+bool remove_from(LinkedList* list, char* file_name) {
+    SearchContent* content = search(list, file_name);
+    Node* current = content->current;
+    Node* prev = content->prev;
+    int count = content->count;
 
     if (current != NULL && strcmp(current->file_name, file_name) == 0) {
-        
+        for (int i = 0; i < count; i++) {
+            prev->next = current->next;
+            free(current);
+            current = prev->next;
+        }
+
+        return true;
     }
+
+    return false;
 }
 
-Node* search(LinkedList* list, char* file_name) {
+SearchContent* search(LinkedList* list, char* file_name) {
     Node* prev = list->head;
-    Node* current = list->head->next;
+    Node* current = NULL;
+    Node* aux = list->head->next;
+    int count = 0;
 
-    while (current != NULL && strcmp(current->file_name, file_name) != 0) {
-        prev = current;
-        current = current->next;
+    while (aux != NULL && strcmp(aux->file_name, file_name) != 0) {
+        prev = aux;
+        aux = aux->next;
     }
 
-    return current;
+    if (strcmp(aux->file_name, file_name) == 0) {
+        current = aux;
+
+        while (aux != NULL && strcmp(aux->file_name, file_name) == 0) {
+            count++;
+            aux = aux->next;
+        }
+    }
+
+    SearchContent* content = (SearchContent*) malloc(sizeof(SearchContent));
+
+    content->current = current;
+    content->prev = prev;
+    content->count = count;
+
+    return content;
 }
