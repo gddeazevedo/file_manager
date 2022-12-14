@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#define EXIT 0
 #define INSERT_FILE 1
 #define REMOVE_FILE 2
 #define SHOW_FILES  3
