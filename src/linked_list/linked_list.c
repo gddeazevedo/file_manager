@@ -33,6 +33,7 @@ bool remove_from(LinkedList* list, char* file_name) {
             prev->next = current->next;
             free(current);
             current = prev->next;
+            list->length -= 1;
         }
 
         return true;
