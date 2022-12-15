@@ -10,8 +10,8 @@ LinkedList* new_LinkedList() {
     return list;
 }
 
-void insert_in(LinkedList* list, char* content, char* file_name) {
-    if (list->length > MAX_LENGTH) return;
+bool insert_in(LinkedList* list, char* content, char* file_name) {
+    if (list->length > MAX_LENGTH) return false;
 
     Node* new_node = (Node*) malloc(sizeof(Node));
     strcpy(new_node->file_content, content);
@@ -20,6 +20,7 @@ void insert_in(LinkedList* list, char* content, char* file_name) {
     list->tail->next = new_node;
     list->tail = new_node;
     list->length += 1;
+    return true;
 }
 
 bool remove_from(LinkedList* list, char* file_name) {

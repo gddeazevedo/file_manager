@@ -30,7 +30,7 @@ typedef struct {
 
 
 LinkedList* new_LinkedList();
-void insert_in(LinkedList* list, char* content, char* file_name);
+bool insert_in(LinkedList* list, char* content, char* file_name);
 bool remove_from(LinkedList* list, char* file_name);
 SearchContent* search(LinkedList* list, char* file_name);
 
