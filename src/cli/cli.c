@@ -12,19 +12,13 @@ static void show_menu(LinkedList* list) {
         input != 0 &&
         input != 1 &&
         input != 2 &&
-        input != 3 &&
-        input != 4 &&
-        input != 5 &&
-        input != 6
+        input != 3
     ) {
         printf("----Bem vindo ao gerenciador de arquivos!----\n");
         printf("(0) Sair\n");
         printf("(1) Inserir um novo arquivo\n");
         printf("(2) Remover arquivo\n");
-        printf("(3) Mostrar arquivos\n");
-        printf("(4) Buscar arquivo\n");
-        printf("(5) Buscar no arquivo\n");
-        printf("(6) Mostrar um arquivo em específico\n");
+        printf("(3) Buscar arquivo\n");
         printf("Selecionar opção: ");
         scanf("%d", &input);
         system("clear");
@@ -32,7 +26,6 @@ static void show_menu(LinkedList* list) {
 
     select_option(list, input);
 }
-
 
 static void select_option(LinkedList* list, int input) {
     switch (input)
@@ -45,15 +38,6 @@ static void select_option(LinkedList* list, int input) {
             break;
         case REMOVE_FILE:
             remove_file(list);
-            break;
-        case SHOW_FILES:
-            show_files(list);
-            break;
-        case SEARCH_FILE:
-            search_file(list);
-            break;
-        case SEARCH_IN_FILE:
-            search_in_file(list);
             break;
         case SHOW_FILE:
             show_file(list);
@@ -82,7 +66,13 @@ static void insert_file(LinkedList* list) {
 
     while (!feof(file)) {
         fgets(file_content, SIZE_FILE_CONTENT, file);
-        insert_in(list, file_content, file_name);
+        
+        if (!insert_in(list, file_content, file_name)) {
+            printf("Memória excedida!\n");
+            sleep(5);
+            fclose(file);
+            return;
+        }
     }
 
     fclose(file);
@@ -113,19 +103,6 @@ static void remove_file(LinkedList* list) {
     sleep(5);
 }
 
-static void show_files(LinkedList* list) {
-    Node* current_file = list->head->next;
-
-}
-
-static void search_file(LinkedList* list) {
-
-}
-
-static void search_in_file(LinkedList* list) {
-
-}
-
 static void show_file(LinkedList* list) {
     printf("Digite o caminho para o arquivo que deseja verificar se está cadastrado: ");
     char file_name[50];
@@ -152,8 +129,10 @@ static void show_file(LinkedList* list) {
         return;
     }
 
+    printf("%s - %d nós\n", current->file_name, count);
+
     for (int i = 0; i < count; i++) {
-        printf("\t%s - %p - %d\n", current->file_name, current, count);
+        printf("%d - %p\n", i + 1, current);
         current = current->next;        
     }
 
