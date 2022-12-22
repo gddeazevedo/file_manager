@@ -90,5 +90,11 @@ void show_file(LinkedList* list) {
         current = current->next;        
     }
 
-    sleep(10);
+    char op = 'a';
+    __fpurge(stdin);
+
+    while (op != 'q') {
+        printf("Digite 'q' e aperte enter para sair: ");
+        scanf("%c", &op);
+    }
 }

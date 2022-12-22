@@ -2,7 +2,9 @@
 #define __file_manager
 
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <stdio_ext.h>
 #include "../linked_list/linked_list.h"
 
 void insert_file(LinkedList* list);
