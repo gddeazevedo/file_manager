@@ -1,5 +1,5 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef __cli_h
+#define __cli_h
 
 #include "../linked_list/linked_list.h"
 #include <stdlib.h>
