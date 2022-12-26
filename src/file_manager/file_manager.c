@@ -18,6 +18,15 @@ void insert_file(LinkedList* list) {
 
     char file_content[SIZE_FILE_CONTENT];
 
+    SearchContent* content = search(list, file_name);
+
+    if (content->current != NULL) {
+        printf("Arquivo já está cadastrado!\n");
+        sleep(5);
+        return;
+    }
+
+
     while (!feof(file)) {
         fgets(file_content, SIZE_FILE_CONTENT, file);
         
