@@ -1,10 +1,24 @@
 #include "cli.h"
 
+/**
+ * @brief Inícia a interface de comando de linha (command line interface)
+ * 
+ * @param list lista encadeada
+ * @return void
+ */
+
 void run_cli(LinkedList* list) {
     system("clear");
     show_menu(list);
 }
 
+
+/**
+ * @brief Mostra o menu da aplicação
+ * 
+ * @param list lista encadeada
+ * @return void
+ */
 static void show_menu(LinkedList* list) {
     int input = -1;
 
@@ -27,6 +41,13 @@ static void show_menu(LinkedList* list) {
     select_option(list, input);
 }
 
+/**
+ * @brief Seleciona a opção escolhida pelo usuário
+ * 
+ * @param list lista encadeada
+ * @param input opcão do usuário
+ * @return void
+ */
 static void select_option(LinkedList* list, int input) {
     switch (input)
     {
