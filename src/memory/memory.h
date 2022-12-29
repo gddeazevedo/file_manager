@@ -24,6 +24,6 @@ Memory* newMemory();
 Node* newNode(char* file_content, char* file_name);
 bool insert_in(Memory* mem, char* file_content, char* file_name);
 bool remove_from(Memory* mem, char* file_name);
-unsigned int search(Memory* mem, char* file_name);
+int search(Memory* mem, char* file_name);
 
 #endif

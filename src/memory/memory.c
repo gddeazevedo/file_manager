@@ -61,7 +61,7 @@ bool remove_from(Memory* mem, char* file_name) {
     return true;
 }
 
-unsigned int search(Memory* mem, char* file_name) {
+int search(Memory* mem, char* file_name) {
     int i = 0;
 
     while (i < MEMORY_LENGTH) {
