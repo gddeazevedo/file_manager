@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FIle Manager: Código-Fonte de /home/gabriel/Cefet/3_periodo/aeds1/file_manager/src/memory/memory.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FIle Manager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_94d7edf6f8f3d9af5fd63c44172da41c.html">memory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">memory.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="memory_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __memory_h</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __memory_h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="memory_8h.html#a5accf164bc4835d6d3a74aa2b7266ea7">    9</a></span><span class="preprocessor">#define SIZE_FILE_CONTENT 256</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">   10</a></span><span class="preprocessor">#define MEMORY_LENGTH 1000</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct____node.html">   12</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct____node.html">__node</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct____node.html#af0632033c8117705e39ffada92e096bb">   13</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="struct____node.html#af0632033c8117705e39ffada92e096bb">file_content</a>[<a class="code hl_define" href="memory_8h.html#a5accf164bc4835d6d3a74aa2b7266ea7">SIZE_FILE_CONTENT</a>];</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">   14</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">file_name</a>[50];</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">next</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="memory_8h.html#a17ed92ee33f415b739a31ea0addc9647">   16</a></span>} <a class="code hl_typedef" href="memory_8h.html#a17ed92ee33f415b739a31ea0addc9647">Node</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct____memory.html">   18</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct____memory.html">__memory</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">   19</a></span>    <a class="code hl_struct" href="struct____node.html">Node</a>* <a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[<a class="code hl_define" href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a>];</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">   20</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">occupied</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="memory_8h.html#a87f8bd5edefb791e50e3d62c45d818f6">   21</a></span>} <a class="code hl_typedef" href="memory_8h.html#a87f8bd5edefb791e50e3d62c45d818f6">Memory</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><a class="code hl_struct" href="struct____memory.html">Memory</a>* <a class="code hl_function" href="memory_8h.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_struct" href="struct____node.html">Node</a>* <a class="code hl_function" href="memory_8h.html#adf334682f2f23f1138898bbd669667ca">newNode</a>(<span class="keywordtype">char</span>* file_content, <span class="keywordtype">char</span>* file_name);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">bool</span> <a class="code hl_function" href="memory_8h.html#a1deb2840b4b34dda12740ca515589627">insert_in</a>(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">char</span>* file_content, <span class="keywordtype">char</span>* file_name);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">bool</span> <a class="code hl_function" href="memory_8h.html#a451cd769d2d99ac2e1405f3127e19134">remove_from</a>(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">char</span>* file_name);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="memory_8h.html#a9628fc409e172f17b4c439d9b40114c6">search</a>(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">char</span>* file_name);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amemory_8h_html_a17ed92ee33f415b739a31ea0addc9647"><div class="ttname"><a href="memory_8h.html#a17ed92ee33f415b739a31ea0addc9647">Node</a></div><div class="ttdeci">struct __node Node</div></div>
+<div class="ttc" id="amemory_8h_html_a1deb2840b4b34dda12740ca515589627"><div class="ttname"><a href="memory_8h.html#a1deb2840b4b34dda12740ca515589627">insert_in</a></div><div class="ttdeci">bool insert_in(Memory *mem, char *file_content, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00023">memory.c:23</a></div></div>
+<div class="ttc" id="amemory_8h_html_a451cd769d2d99ac2e1405f3127e19134"><div class="ttname"><a href="memory_8h.html#a451cd769d2d99ac2e1405f3127e19134">remove_from</a></div><div class="ttdeci">bool remove_from(Memory *mem, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00048">memory.c:48</a></div></div>
+<div class="ttc" id="amemory_8h_html_a55ab828f2af437ffb05fd2f33f1acb18"><div class="ttname"><a href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a></div><div class="ttdeci">#define MEMORY_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00010">memory.h:10</a></div></div>
+<div class="ttc" id="amemory_8h_html_a5accf164bc4835d6d3a74aa2b7266ea7"><div class="ttname"><a href="memory_8h.html#a5accf164bc4835d6d3a74aa2b7266ea7">SIZE_FILE_CONTENT</a></div><div class="ttdeci">#define SIZE_FILE_CONTENT</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00009">memory.h:9</a></div></div>
+<div class="ttc" id="amemory_8h_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8h.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
+<div class="ttc" id="amemory_8h_html_a87f8bd5edefb791e50e3d62c45d818f6"><div class="ttname"><a href="memory_8h.html#a87f8bd5edefb791e50e3d62c45d818f6">Memory</a></div><div class="ttdeci">struct __memory Memory</div></div>
+<div class="ttc" id="amemory_8h_html_a9628fc409e172f17b4c439d9b40114c6"><div class="ttname"><a href="memory_8h.html#a9628fc409e172f17b4c439d9b40114c6">search</a></div><div class="ttdeci">unsigned int search(Memory *mem, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00064">memory.c:64</a></div></div>
+<div class="ttc" id="amemory_8h_html_adf334682f2f23f1138898bbd669667ca"><div class="ttname"><a href="memory_8h.html#adf334682f2f23f1138898bbd669667ca">newNode</a></div><div class="ttdeci">Node * newNode(char *file_content, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00015">memory.c:15</a></div></div>
+<div class="ttc" id="astruct____memory_html"><div class="ttname"><a href="struct____memory.html">__memory</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00018">memory.h:18</a></div></div>
+<div class="ttc" id="astruct____memory_html_a41958d5bc5504f73bbbce62439ac47e6"><div class="ttname"><a href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">__memory::ram</a></div><div class="ttdeci">Node * ram[MEMORY_LENGTH]</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00019">memory.h:19</a></div></div>
+<div class="ttc" id="astruct____memory_html_ae75b0c1d6c78e99469773e29b9749c93"><div class="ttname"><a href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">__memory::occupied</a></div><div class="ttdeci">unsigned int occupied</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00020">memory.h:20</a></div></div>
+<div class="ttc" id="astruct____node_html"><div class="ttname"><a href="struct____node.html">__node</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00012">memory.h:12</a></div></div>
+<div class="ttc" id="astruct____node_html_a142a1b51e133e50c0a72b175958ac412"><div class="ttname"><a href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">__node::next</a></div><div class="ttdeci">int next</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00015">memory.h:15</a></div></div>
+<div class="ttc" id="astruct____node_html_aa82337d97061de746ab4dc1dab2324f5"><div class="ttname"><a href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">__node::file_name</a></div><div class="ttdeci">char file_name[50]</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00014">memory.h:14</a></div></div>
+<div class="ttc" id="astruct____node_html_af0632033c8117705e39ffada92e096bb"><div class="ttname"><a href="struct____node.html#af0632033c8117705e39ffada92e096bb">__node::file_content</a></div><div class="ttdeci">char file_content[SIZE_FILE_CONTENT]</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00013">memory.h:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

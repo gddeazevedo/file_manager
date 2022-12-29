@@ -12,16 +12,17 @@
 
 
 /**
- * @brief Inícia a interface de comando de linha (command line interface)
- */
-void run_cli();
-
-/**
  * @brief Mostra o menu da aplicação
  * 
  * @param mem memória que simula a memória do computador
  */
 static void show_menu(Memory* mem);
+
+/**
+ * @brief Inícia a interface de comando de linha (command line interface)
+ */
+void run_cli();
+
 
 /**
  * @brief Seleciona a opção escolhida pelo usuário
