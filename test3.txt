@@ -1,0 +1,47 @@
+if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }
+    if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }
+    if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }
+    if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }
+    if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }if (prev_node != current_node) {
+        mem->ram[prev_node]->next = current_node;
+        prev_node = current_node;
+    }

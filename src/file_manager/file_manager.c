@@ -1,7 +1,7 @@
 #include "file_manager.h"
 
 
-void insert_file(LinkedList* list) {
+void insert_file(Memory* mem) {
     system("clear");
 
     printf("Digite o caminho para o arquivo: ");
@@ -11,26 +11,17 @@ void insert_file(LinkedList* list) {
     FILE* file = fopen(file_name, "r");
 
     if (file == NULL) {
-        fprintf(stderr, "Error in opening file!\n");
+        fprintf(stderr, "Arquivo inexistente!\n");
         sleep(5);
         return;
     }
 
     char file_content[SIZE_FILE_CONTENT];
 
-    SearchContent* content = search(list, file_name);
-
-    if (content->current != NULL) {
-        printf("Arquivo já está cadastrado!\n");
-        sleep(5);
-        return;
-    }
-
-
     while (!feof(file)) {
         fgets(file_content, SIZE_FILE_CONTENT, file);
         
-        if (!insert_in(list, file_content, file_name)) {
+        if (!insert_in(mem, file_content, file_name)) {
             printf("Memória excedida!\n");
             sleep(5);
             fclose(file);
@@ -41,10 +32,10 @@ void insert_file(LinkedList* list) {
     fclose(file);
 
     printf("Arquivo salvo com sucesso!\n");
-    sleep(5);
+    sleep(2);
 }
 
-void remove_file(LinkedList* list) {
+void remove_file(Memory* mem) {
     system("clear");
 
     printf("Digite o caminho para o arquivo que deseja remover: ");
@@ -61,12 +52,12 @@ void remove_file(LinkedList* list) {
 
     fclose(file);
 
-    remove_from(list, file_name);
+    remove_from(mem, file_name);
     printf("Arquivo removido com sucesso!\n");
     sleep(5);
 }
 
-void show_file(LinkedList* list) {
+void show_file(Memory* mem) {
     printf("Digite o caminho para o arquivo que deseja verificar se está cadastrado: ");
     char file_name[50];
     scanf("%s", file_name);
@@ -81,22 +72,20 @@ void show_file(LinkedList* list) {
 
     fclose(file);
 
-    SearchContent* content = search(list, file_name);
+    int index = search(mem, file_name);
 
-    Node* current = content->current;
-    int count = content->count;
-
-    if (current == NULL) {
-        printf("Arquivo não cadastrado!\n");
+    if (index == -1) {
+        fprintf(stderr, "Arquivo não cadastrado!\n");
         sleep(5);
         return;
     }
 
-    printf("%s - %d nós\n", current->file_name, count);
+    Node* node = mem->ram[index];
 
-    for (int i = 0; i < count; i++) {
-        printf("%d - %p\n", i + 1, current);
-        current = current->next;        
+    while (index != -1 && node != NULL) {
+        printf("%d - %s\n", index, node->file_name);
+        index = node->next;
+        node = mem->ram[index];
     }
 
     char op = 'a';

@@ -5,10 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio_ext.h>
-#include "../linked_list/linked_list.h"
+#include "../memory/memory.h"
 
-void insert_file(LinkedList* list);
-void remove_file(LinkedList* list);
-void show_file(LinkedList* list);
+
+void insert_file(Memory* mem);
+void remove_file(Memory* mem);
+void show_file(Memory* mem);
 
 #endif
