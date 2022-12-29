@@ -26,6 +26,10 @@ bool insert_in(Memory* mem, char* file_content, char* file_name) {
     static int prev_node = 0;
     int current_node = 0;
 
+    if (mem->occupied == 0) {
+        prev_node = 0;
+    }
+
     while (current_node < MEMORY_LENGTH && mem->ram[current_node] != NULL) {
         current_node++;
     }
@@ -56,6 +60,7 @@ bool remove_from(Memory* mem, char* file_name) {
         mem->ram[index] = NULL;
         index = node->next;
         node = mem->ram[index];
+        mem->occupied -= 1;
     }
 
     return true;
