@@ -11,7 +11,7 @@
 #define SHOW_FILE 3
 
 void run_cli();
-static void show_menu();
-static void select_option(int input);
+static void show_menu(Memory* mem);
+static void select_option(Memory* mem, int input);
 
 #endif
