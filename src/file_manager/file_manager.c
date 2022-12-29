@@ -1,5 +1,27 @@
 #include "file_manager.h"
 
+static bool did_file_opened(char* file_name, char* error_msg) {
+    FILE* file = fopen(file_name, "r");
+
+    if (file == NULL) {
+        fprintf(stderr, "Arquivo inexistente!\n");
+        sleep(5);
+        return false;
+    }
+
+    fclose(file);
+    return true;
+}
+
+static bool file_exist(Memory* mem, char* file_name) {
+    if (search(mem, file_name) != -1) {
+        printf("Arquivo já está inserido!\n");
+        sleep(5);
+        return true;
+    }
+
+    return false;
+}
 
 void insert_file(Memory* mem) {
     system("clear");
@@ -8,20 +30,10 @@ void insert_file(Memory* mem) {
     char file_name[50];
     scanf("%s", file_name);
 
+    if (file_exist(mem, file_name)) return;
+    if (!did_file_opened(file_name, "Arquivo inexistente!\n")) return;
+
     FILE* file = fopen(file_name, "r");
-
-    if (file == NULL) {
-        fprintf(stderr, "Arquivo inexistente!\n");
-        sleep(5);
-        return;
-    }
-
-    if (search(mem, file_name) != -1) {
-        printf("Arquivo já está inserido!\n");
-        sleep(5);
-        fclose(file);
-        return;
-    }
 
     char file_content[SIZE_FILE_CONTENT];
 
@@ -48,15 +60,9 @@ void remove_file(Memory* mem) {
     char file_name[50];
     scanf("%s", file_name);
 
-    FILE* file = fopen(file_name, "r");
-
-    if (file == NULL) {
-        fprintf(stderr, "Arquivo inexistente!\n");
-        sleep(5);
+    if (!did_file_opened(file_name, "Arquivo inexistente!\n")) {
         return;
     }
-
-    fclose(file);
 
     remove_from(mem, file_name);
     printf("Arquivo removido com sucesso!\n");
@@ -68,15 +74,9 @@ void show_file(Memory* mem) {
     char file_name[50];
     scanf("%s", file_name);
 
-    FILE* file = fopen(file_name, "r");
-
-    if (file == NULL) {
-        fprintf(stderr, "Arquivo inexistente!\n");
-        sleep(5);
+    if (!did_file_opened(file_name, "Arquivo inexistente!\n")) {
         return;
     }
-
-    fclose(file);
 
     int index = search(mem, file_name);
 
