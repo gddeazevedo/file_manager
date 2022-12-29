@@ -47,6 +47,9 @@ bool insert_in(Memory* mem, char* file_content, char* file_name) {
 
 bool remove_from(Memory* mem, char* file_name) {
     int index = search(mem, file_name);
+
+    if (index == -1) return false;
+
     Node* node = mem->ram[index];
 
     while (index != -1 && node != NULL) {
@@ -54,6 +57,8 @@ bool remove_from(Memory* mem, char* file_name) {
         index = node->next;
         node = mem->ram[index];
     }
+
+    return true;
 }
 
 unsigned int search(Memory* mem, char* file_name) {
