@@ -1,11 +1,5 @@
 #include "cli.h"
 
-/**
- * @brief Inícia a interface de comando de linha (command line interface)
- * 
- * @param list lista encadeada
- * @return void
- */
 void run_cli() {
     Memory* mem = newMemory();
 
@@ -15,13 +9,6 @@ void run_cli() {
     }
 }
 
-
-/**
- * @brief Mostra o menu da aplicação
- * 
- * @param list lista encadeada
- * @return void
- */
 static void show_menu(Memory* mem) {
     int input = -1;
 
@@ -44,13 +31,6 @@ static void show_menu(Memory* mem) {
     select_option(mem, input);
 }
 
-/**
- * @brief Seleciona a opção escolhida pelo usuário
- * 
- * @param list lista encadeada
- * @param input opcão do usuário
- * @return void
- */
 static void select_option(Memory* mem, int input) {
     switch (input)
     {

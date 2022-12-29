@@ -10,8 +10,25 @@
 #define REMOVE_FILE 2
 #define SHOW_FILE 3
 
+
+/**
+ * @brief Inícia a interface de comando de linha (command line interface)
+ */
 void run_cli();
+
+/**
+ * @brief Mostra o menu da aplicação
+ * 
+ * @param mem memória que simula a memória do computador
+ */
 static void show_menu(Memory* mem);
+
+/**
+ * @brief Seleciona a opção escolhida pelo usuário
+ * 
+ * @param mem memória que simula a memória do computador
+ * @param input opcão do usuário
+ */
 static void select_option(Memory* mem, int input);
 
 #endif
