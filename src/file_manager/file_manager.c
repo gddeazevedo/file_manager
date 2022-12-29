@@ -16,6 +16,13 @@ void insert_file(Memory* mem) {
         return;
     }
 
+    if (search(mem, file_name) != -1) {
+        printf("Arquivo já está inserido!\n");
+        sleep(5);
+        fclose(file);
+        return;
+    }
+
     char file_content[SIZE_FILE_CONTENT];
 
     while (!feof(file)) {
@@ -30,9 +37,8 @@ void insert_file(Memory* mem) {
     }
 
     fclose(file);
-
     printf("Arquivo salvo com sucesso!\n");
-    sleep(2);
+    sleep(5);
 }
 
 void remove_file(Memory* mem) {
