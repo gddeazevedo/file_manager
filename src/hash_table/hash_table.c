@@ -17,7 +17,7 @@ static uint hash(char* key) {
 }
 
 
-static HashNode* search(char* key) {
+static HashNode* search_in_table(char* key) {
     HashNode* node = table[hash(key)];
 
     while (node != NULL && strcmp(node->key, key) != 0) {
@@ -28,13 +28,13 @@ static HashNode* search(char* key) {
 }
 
 int get(char* key) {
-    HashNode* node = search(key);
+    HashNode* node = search_in_table(key);
     if (node == NULL) return -1;
     return node->item;
 }
 
 bool put(char* key, int item) {
-    HashNode* node = search(key);
+    HashNode* node = search_in_table(key);
 
     if (node == NULL) {
         node = (HashNode*) malloc(sizeof(HashNode));

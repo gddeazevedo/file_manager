@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define TABLE_SIZE 30
 #define KEY_LEN 50
@@ -21,7 +22,7 @@ static HashNode* table[TABLE_SIZE];
 
 
 static uint hash(char* key);
-static HashNode* search(char* key);
+static HashNode* search_in_table(char* key);
 int get(char* key);
 bool put(char* key, int item);
 
