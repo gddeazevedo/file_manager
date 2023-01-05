@@ -45,6 +45,7 @@ void insert_file(Memory* mem, HashMap* map) {
         
         if (!insert_in(mem, file_content, file_name)) {
             printf("Memória excedida!\n");
+            remove_from(mem, file_name);
             sleep(5);
             fclose(file);
             return;
