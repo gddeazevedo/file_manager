@@ -7,6 +7,7 @@
 #include <stdbool.h>
 #include <stdio_ext.h>
 #include "../memory/memory.h"
+#include "../hash_table/hash_table.h"
 
 
 void insert_file(Memory* mem);

@@ -30,6 +30,8 @@ void insert_file(Memory* mem) {
     char file_name[50];
     scanf("%s", file_name);
 
+    int total_nodes = 0;
+
     if (file_exist(mem, file_name)) return;
     if (!did_file_opened(file_name, "Arquivo inexistente!\n")) return;
 
@@ -39,6 +41,7 @@ void insert_file(Memory* mem) {
 
     while (!feof(file)) {
         fgets(file_content, SIZE_FILE_CONTENT, file);
+        total_nodes++;
         
         if (!insert_in(mem, file_content, file_name)) {
             printf("Memória excedida!\n");
@@ -49,6 +52,9 @@ void insert_file(Memory* mem) {
     }
 
     fclose(file);
+
+    put(file_name, total_nodes);
+
     printf("Arquivo salvo com sucesso!\n");
     sleep(5);
 }
@@ -85,6 +91,11 @@ void show_file(Memory* mem) {
         sleep(5);
         return;
     }
+
+    int total_nodes = get(file_name);
+
+    printf("Arquivo: %s | Nós: %d\n", file_name, total_nodes);
+    sleep(2);
 
     Node* node = mem->ram[index];
 
