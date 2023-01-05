@@ -48,3 +48,31 @@ bool put(char* key, int item) {
 
     return false;
 }
+
+bool delete(char* key) {
+    uint index = hash(key);
+    HashNode* current = table[index];
+    HashNode* aux;
+
+    while (current != NULL && strcmp(current->key, key) != 0) {
+        aux = current;
+        current = current->next;
+    }
+
+    if (current == NULL) return false;
+
+    if (current == table[index]) {
+        aux = table[index];
+        table[index] = table[index]->next;
+        aux->next = NULL;
+        free(aux);
+        return true;
+    }
+
+    aux->next = current->next;
+    current->next = NULL;
+    free(current);
+    current = NULL;
+    aux = NULL;
+    return true;
+}

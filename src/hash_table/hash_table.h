@@ -16,14 +16,12 @@ typedef struct __hash_node {
     struct __hash_node* next;
 } HashNode;
 
-
-
 static HashNode* table[TABLE_SIZE];
-
 
 static uint hash(char* key);
 static HashNode* search_in_table(char* key);
 int get(char* key);
 bool put(char* key, int item);
+bool delete(char* key);
 
 #endif
