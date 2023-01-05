@@ -23,7 +23,7 @@ static bool file_exist(Memory* mem, char* file_name) {
     return false;
 }
 
-void insert_file(Memory* mem) {
+void insert_file(Memory* mem, HashMap* map) {
     system("clear");
 
     printf("Digite o caminho para o arquivo: ");
@@ -53,13 +53,13 @@ void insert_file(Memory* mem) {
 
     fclose(file);
 
-    put(file_name, total_nodes);
+    map->put(file_name, total_nodes);
 
     printf("Arquivo salvo com sucesso!\n");
     sleep(5);
 }
 
-void remove_file(Memory* mem) {
+void remove_file(Memory* mem, HashMap* map) {
     system("clear");
 
     printf("Digite o caminho para o arquivo que deseja remover: ");
@@ -70,12 +70,13 @@ void remove_file(Memory* mem) {
         return;
     }
 
+    map->delete(file_name);
     remove_from(mem, file_name);
     printf("Arquivo removido com sucesso!\n");
     sleep(5);
 }
 
-void show_file(Memory* mem) {
+void show_file(Memory* mem, HashMap* map) {
     printf("Digite o caminho para o arquivo que deseja verificar se está cadastrado: ");
     char file_name[50];
     scanf("%s", file_name);
@@ -92,13 +93,14 @@ void show_file(Memory* mem) {
         return;
     }
 
-    int total_nodes = get(file_name);
+    int total_nodes = map->get(file_name);
 
     printf("Arquivo: %s | Nós: %d\n", file_name, total_nodes);
     sleep(2);
 
     Node* node = mem->ram[index];
 
+    printf("End. - Nome do arquivo\n");
     while (index != -1 && node != NULL) {
         printf("%d - %s\n", index, node->file_name);
         index = node->next;

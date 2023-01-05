@@ -2,14 +2,15 @@
 
 void run_cli() {
     Memory* mem = newMemory();
+    HashMap* map = newHashMap();
 
     while (true) {
         system("clear");
-        show_menu(mem);
+        show_menu(mem, map);
     }
 }
 
-static void show_menu(Memory* mem) {
+static void show_menu(Memory* mem, HashMap* map) {
     int input = -1;
 
     while (
@@ -28,23 +29,23 @@ static void show_menu(Memory* mem) {
         system("clear");
     }
 
-    select_option(mem, input);
+    select_option(mem, map, input);
 }
 
-static void select_option(Memory* mem, int input) {
+static void select_option(Memory* mem, HashMap* map, int input) {
     switch (input)
     {
         case EXIT:
             exit(0);
             break;
         case INSERT_FILE:
-            insert_file(mem);
+            insert_file(mem, map);
             break;
         case REMOVE_FILE:
-            remove_file(mem);
+            remove_file(mem, map);
             break;
         case SHOW_FILE:
-            show_file(mem);
+            show_file(mem, map);
             break;
         default:
             break;

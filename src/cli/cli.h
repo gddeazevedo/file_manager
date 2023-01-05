@@ -16,7 +16,7 @@
  * 
  * @param mem memória que simula a memória do computador
  */
-static void show_menu(Memory* mem);
+static void show_menu(Memory* mem, HashMap* map);
 
 /**
  * @brief Inícia a interface de comando de linha (command line interface)
@@ -30,6 +30,6 @@ void run_cli();
  * @param mem memória que simula a memória do computador
  * @param input opcão do usuário
  */
-static void select_option(Memory* mem, int input);
+static void select_option(Memory* mem, HashMap* map, int input);
 
 #endif

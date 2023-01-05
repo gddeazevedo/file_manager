@@ -10,9 +10,9 @@
 #include "../hash_table/hash_table.h"
 
 
-void insert_file(Memory* mem);
-void remove_file(Memory* mem);
-void show_file(Memory* mem);
+void insert_file(Memory* mem, HashMap* map);
+void remove_file(Memory* mem, HashMap* map);
+void show_file(Memory* mem, HashMap* map);
 static bool did_file_opened(char* file_name, char* error_msg);
 static bool file_exist(Memory* mem, char* file_name);
 
