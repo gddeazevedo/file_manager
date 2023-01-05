@@ -4,7 +4,7 @@ static bool did_file_opened(char* file_name, char* error_msg) {
     FILE* file = fopen(file_name, "r");
 
     if (file == NULL) {
-        fprintf(stderr, "Arquivo inexistente!\n");
+        fprintf(stderr, error_msg);
         sleep(5);
         return false;
     }
