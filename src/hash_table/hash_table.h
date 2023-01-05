@@ -16,12 +16,21 @@ typedef struct __hash_node {
     struct __hash_node* next;
 } HashNode;
 
+typedef struct __hash_map {
+    int (*get)(char* key);
+    bool (*put)(char* key, uint item);
+    bool (*delete)(char* key);
+} HashMap;
+
 static HashNode* table[TABLE_SIZE];
 
+HashMap* newHashMap();
 static uint hash(char* key);
 static HashNode* search_in_table(char* key);
 int get(char* key);
-bool put(char* key, int item);
+bool put(char* key, uint item);
 bool delete(char* key);
+
+void print_table();
 
 #endif

@@ -1,6 +1,14 @@
 #include "hash_table.h"
 
 
+HashMap* newHashMap() {
+    HashMap* map = (HashMap*) malloc(sizeof(HashMap));
+    map->get = &get;
+    map->put = &put;
+    map->delete = &delete;
+    return map;
+}
+
 static uint hash(char* key) {
     uint hash_val = 0;
     int len = strlen(key);
@@ -33,7 +41,7 @@ int get(char* key) {
     return node->item;
 }
 
-bool put(char* key, int item) {
+bool put(char* key, uint item) {
     HashNode* node = search_in_table(key);
 
     if (node == NULL) {
