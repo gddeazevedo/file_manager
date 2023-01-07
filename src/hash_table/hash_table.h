@@ -17,8 +17,8 @@ typedef struct __hash_node {
 } HashNode;
 
 typedef struct __hash_map {
-    int (*get)(char* key);
-    bool (*put)(char* key, uint item);
+    MetaData* (*get)(char* key);
+    bool (*put)(char* key, MetaData* item);
     bool (*delete)(char* key);
 } HashMap;
 
