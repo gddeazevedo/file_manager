@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include "../meta_data/meta_data.h"
+#include "../hash_table/hash_table.h"
 
 #define SIZE_FILE_CONTENT 256
 #define MEMORY_LENGTH 1000
@@ -22,8 +24,7 @@ typedef struct __memory {
 
 Memory* newMemory();
 Node* newNode(char* file_content, char* file_name);
-bool insert_in(Memory* mem, char* file_content, char* file_name);
-bool remove_from(Memory* mem, char* file_name);
-int search(Memory* mem, char* file_name);
+bool insert_in(Memory* mem, MetaData* data, char* file_content, char* file_name);
+bool remove_from(Memory* mem, HashMap* map, char* file_name);
 
 #endif

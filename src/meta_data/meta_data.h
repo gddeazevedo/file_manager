@@ -2,7 +2,6 @@
 #define __meta_data_h
 
 #include <stdlib.h>
-#include <string.h>
 
 typedef unsigned int uint;
 
@@ -12,6 +11,6 @@ typedef struct __meta_data {
     char file_name[50];
 } MetaData;
 
-MetaData* newMetaData(uint file_size, uint file_first_index, char* file_name);
+MetaData* newMetaData();
 
 #endif

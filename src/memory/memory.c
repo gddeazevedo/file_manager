@@ -20,7 +20,7 @@ Node* newNode(char* file_content, char* file_name) {
     return node;
 }
 
-bool insert_in(Memory* mem, char* file_content, char* file_name) {
+bool insert_in(Memory* mem, MetaData* data, char* file_content, char* file_name) {
     if (mem->occupied == MEMORY_LENGTH) return false;
 
     static int prev_node = 0;
@@ -39,6 +39,7 @@ bool insert_in(Memory* mem, char* file_content, char* file_name) {
     if (strcmp(mem->ram[prev_node]->file_name, file_name) != 0) {
         mem->ram[prev_node]->next = -1;
         prev_node = current_node;
+        data->file_first_index = current_node;
     } else if (prev_node != current_node) {
         mem->ram[prev_node]->next = current_node;
         prev_node = current_node;
@@ -49,10 +50,12 @@ bool insert_in(Memory* mem, char* file_content, char* file_name) {
     return true;
 }
 
-bool remove_from(Memory* mem, char* file_name) {
-    int index = search(mem, file_name);
+bool remove_from(Memory* mem, HashMap* map, char* file_name) {
+    MetaData* meta_data = map->get(file_name);
 
-    if (index == -1) return false;
+    if (meta_data == NULL) return false;
+
+    int index = meta_data->file_first_index;
 
     Node* node = mem->ram[index];
 
@@ -64,21 +67,23 @@ bool remove_from(Memory* mem, char* file_name) {
         mem->occupied -= 1;
     }
 
+    map->delete(file_name);
+
     return true;
 }
 
-int search(Memory* mem, char* file_name) {
-    int i = 0;
+// int search(Memory* mem, char* file_name) {
+//     int i = 0;
 
-    while (i < MEMORY_LENGTH) {
-        Node* current = mem->ram[i];
+//     while (i < MEMORY_LENGTH) {
+//         Node* current = mem->ram[i];
 
-        if (current != NULL && strcmp(current->file_name, file_name) == 0) {
-            return i;
-        }
+//         if (current != NULL && strcmp(current->file_name, file_name) == 0) {
+//             return i;
+//         }
 
-        i++;
-    }
+//         i++;
+//     }
 
-    return -1;
-}
+//     return -1;
+// }

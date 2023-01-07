@@ -13,8 +13,8 @@ static bool did_file_opened(char* file_name, char* error_msg) {
     return true;
 }
 
-static bool file_exist(Memory* mem, char* file_name) {
-    if (search(mem, file_name) != -1) {
+static bool file_exist(Memory* mem, HashMap* map, char* file_name) {
+    if (map->get(file_name) != NULL) {
         printf("Arquivo já está inserido!\n");
         sleep(5);
         return true;
@@ -32,20 +32,22 @@ void insert_file(Memory* mem, HashMap* map) {
 
     int total_nodes = 0;
 
-    if (file_exist(mem, file_name)) return;
+    if (file_exist(mem, map, file_name)) return;
     if (!did_file_opened(file_name, "Arquivo inexistente!\n")) return;
 
     FILE* file = fopen(file_name, "r");
 
     char file_content[SIZE_FILE_CONTENT];
 
+    MetaData* meta_data = newMetaData();
+
     while (!feof(file)) {
         fgets(file_content, SIZE_FILE_CONTENT, file);
         total_nodes++;
         
-        if (!insert_in(mem, file_content, file_name)) {
+        if (!insert_in(mem, meta_data, file_content, file_name)) {
             printf("Memória excedida!\n");
-            remove_from(mem, file_name);
+            remove_from(mem, map, file_name);
             sleep(5);
             fclose(file);
             return;
@@ -54,7 +56,10 @@ void insert_file(Memory* mem, HashMap* map) {
 
     fclose(file);
 
-    map->put(file_name, total_nodes);
+    meta_data->file_size = total_nodes;
+    strcpy(meta_data->file_name, file_name);
+
+    map->put(file_name, meta_data);
 
     printf("Arquivo salvo com sucesso!\n");
     sleep(5);
@@ -71,8 +76,7 @@ void remove_file(Memory* mem, HashMap* map) {
         return;
     }
 
-    map->delete(file_name);
-    remove_from(mem, file_name);
+    remove_from(mem, map, file_name);
     printf("Arquivo removido com sucesso!\n");
     sleep(5);
 }
@@ -86,15 +90,16 @@ void show_file(Memory* mem, HashMap* map) {
         return;
     }
 
-    int index = search(mem, file_name);
+    MetaData* meta_data = map->get(file_name);
 
-    if (index == -1) {
+    if (meta_data == NULL) {
         fprintf(stderr, "Arquivo não cadastrado!\n");
         sleep(5);
         return;
     }
 
-    int total_nodes = map->get(file_name);
+    int index = meta_data->file_first_index;
+    int total_nodes = meta_data->file_size;
 
     printf("Arquivo: %s | Nós: %d\n", file_name, total_nodes);
     sleep(2);
