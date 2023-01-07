@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include "../meta_data/meta_data.h"
-#include "../hash_table/hash_table.h"
+#include "../hash_map/hash_map.h"
 
 #define SIZE_FILE_CONTENT 256
 #define MEMORY_LENGTH 1000

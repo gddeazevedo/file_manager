@@ -8,7 +8,7 @@
 #include <stdio_ext.h>
 #include <string.h>
 #include "../memory/memory.h"
-#include "../hash_table/hash_table.h"
+#include "../hash_map/hash_map.h"
 #include "../meta_data/meta_data.h"
 
 
