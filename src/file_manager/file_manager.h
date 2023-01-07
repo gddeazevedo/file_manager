@@ -10,6 +10,7 @@
 #include "../memory/memory.h"
 #include "../hash_map/hash_map.h"
 #include "../meta_data/meta_data.h"
+#include "../helpers/helpers.h"
 
 
 void insert_file(Memory* mem, HashMap* map);

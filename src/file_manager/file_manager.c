@@ -5,7 +5,7 @@ static bool did_file_opened(char* file_name, char* error_msg) {
 
     if (file == NULL) {
         fprintf(stderr, error_msg);
-        sleep(5);
+        pause_program();
         return false;
     }
 
@@ -16,7 +16,7 @@ static bool did_file_opened(char* file_name, char* error_msg) {
 static bool file_exist(Memory* mem, HashMap* map, char* file_name) {
     if (map->get(file_name) != NULL) {
         printf("Arquivo já está inserido!\n");
-        sleep(5);
+        pause_program();
         return true;
     }
 
@@ -48,8 +48,8 @@ void insert_file(Memory* mem, HashMap* map) {
         if (!insert_in(mem, meta_data, file_content, file_name)) {
             printf("Memória excedida!\n");
             remove_from(mem, map, file_name);
-            sleep(5);
             fclose(file);
+            pause_program();
             return;
         }
     }
@@ -62,7 +62,7 @@ void insert_file(Memory* mem, HashMap* map) {
     map->put(file_name, meta_data);
 
     printf("Arquivo salvo com sucesso!\n");
-    sleep(5);
+    pause_program();
 }
 
 void remove_file(Memory* mem, HashMap* map) {
@@ -78,7 +78,7 @@ void remove_file(Memory* mem, HashMap* map) {
 
     remove_from(mem, map, file_name);
     printf("Arquivo removido com sucesso!\n");
-    sleep(5);
+    pause_program();
 }
 
 void show_file(Memory* mem, HashMap* map) {
@@ -94,7 +94,7 @@ void show_file(Memory* mem, HashMap* map) {
 
     if (meta_data == NULL) {
         fprintf(stderr, "Arquivo não cadastrado!\n");
-        sleep(5);
+        pause_program();
         return;
     }
 
@@ -102,7 +102,7 @@ void show_file(Memory* mem, HashMap* map) {
     int total_nodes = meta_data->file_size;
 
     printf("Arquivo: %s | Nós: %d\n", file_name, total_nodes);
-    sleep(2);
+    sleep(1);
 
     Node* node = mem->ram[index];
 
@@ -113,11 +113,5 @@ void show_file(Memory* mem, HashMap* map) {
         node = mem->ram[index];
     }
 
-    char op = 'a';
-    __fpurge(stdin);
-
-    while (op != 'q') {
-        printf("Digite 'q' e aperte enter para sair: ");
-        scanf("%c", &op);
-    }
+    pause_program();
 }
