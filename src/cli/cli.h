@@ -10,24 +10,24 @@
 #define REMOVE_FILE 2
 #define SHOW_FILE 3
 
-
-/**
- * @brief Mostra o menu da aplicação
- * 
- * @param mem memória que simula a memória do computador
- */
-static void show_menu(Memory* mem, HashMap* map);
-
 /**
  * @brief Inícia a interface de comando de linha (command line interface)
  */
 void run_cli();
 
+/**
+ * @brief Mostra o menu da aplicação
+ * 
+ * @param mem memória que simula a memória do computador
+ * @param map tabela hash para armazenar metadados de arquivos
+ */
+static void show_menu(Memory* mem, HashMap* map);
 
 /**
  * @brief Seleciona a opção escolhida pelo usuário
  * 
  * @param mem memória que simula a memória do computador
+ * @param map tabela hash para armazenar metadados de arquivos
  * @param input opcão do usuário
  */
 static void select_option(Memory* mem, HashMap* map, int input);

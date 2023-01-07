@@ -3,6 +3,9 @@
 
 #include <stdio.h>
 
+/**
+ * @brief Pausa o progama até que o usuário aperte ENTER
+ */
 void pause_program();
 
 #endif
