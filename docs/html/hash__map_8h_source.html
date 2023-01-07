@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FIle Manager: Código-Fonte de /home/gabriel/Cefet/3_periodo/aeds1/file_manager/src/hash_map/hash_map.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FIle Manager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ef64d4e6a193671ddfa36308faebf8e9.html">hash_map</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">hash_map.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="hash__map_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __hash_table_h</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __hash_table_h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../meta_data/meta_data.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="hash__map_8h.html#a032503e76d6f69bc67e99e909c8125da">    9</a></span><span class="preprocessor">#define TABLE_SIZE 30</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="hash__map_8h.html#a32a183eeadf922d255d06a4e4f2aca66">   10</a></span><span class="preprocessor">#define KEY_LEN 50</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct____hash__node.html">   15</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct____hash__node.html">__hash_node</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct____hash__node.html#a801f233c914e0b07833627834d53206a">   16</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="struct____hash__node.html#a801f233c914e0b07833627834d53206a">key</a>[<a class="code hl_define" href="hash__map_8h.html#a32a183eeadf922d255d06a4e4f2aca66">KEY_LEN</a>];</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct____hash__node.html#aee73043cf231e329369adc229e344b84">   17</a></span>    <a class="code hl_struct" href="structMetaData.html">MetaData</a>* <a class="code hl_variable" href="struct____hash__node.html#aee73043cf231e329369adc229e344b84">item</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct____hash__node.html#aa2bf2746128a980e1fcce2c763c1f158">   18</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct____hash__node.html">__hash_node</a>* <a class="code hl_variable" href="struct____hash__node.html#aa2bf2746128a980e1fcce2c763c1f158">next</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="hash__map_8h.html#a52b670b1d7e76fe61133b6f7f16fb8eb">   19</a></span>} <a class="code hl_typedef" href="hash__map_8h.html#a52b670b1d7e76fe61133b6f7f16fb8eb">HashNode</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct____hash__map.html">   24</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct____hash__map.html">__hash_map</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct____hash__map.html#ad8db4ea8af69511570f41e77224e778f">   25</a></span>    <a class="code hl_struct" href="structMetaData.html">MetaData</a>* (*get)(<span class="keywordtype">char</span>* key);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct____hash__map.html#a5f3cba45cbde0b0073402cef350342d4">   26</a></span>    bool (*<a class="code hl_variable" href="struct____hash__map.html#a5f3cba45cbde0b0073402cef350342d4">put</a>)(<span class="keywordtype">char</span>* key, <a class="code hl_struct" href="structMetaData.html">MetaData</a>* item);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct____hash__map.html#ac19f9fbf996db0dc4b2ebd9759ed8ab1">   27</a></span>    bool (*<span class="keyword">delete</span>)(<span class="keywordtype">char</span>* key);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="hash__map_8h.html#ab34170680c29aec3de81ba8d3985d78d">   28</a></span>} <a class="code hl_typedef" href="hash__map_8h.html#ab34170680c29aec3de81ba8d3985d78d">HashMap</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">static</span> <a class="code hl_struct" href="structHashNode.html">HashNode</a>* table[<a class="code hl_define" href="hash__map_8h.html#a032503e76d6f69bc67e99e909c8125da">TABLE_SIZE</a>];</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><a class="code hl_struct" href="structHashMap.html">HashMap</a>* <a class="code hl_function" href="hash__map_8h.html#aa866a3628609541fccfcb37acb2bddac">newHashMap</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">static</span> <a class="code hl_typedef" href="meta__data_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> hash(<span class="keywordtype">char</span>* key);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">static</span> <a class="code hl_struct" href="structHashNode.html">HashNode</a>* search(<span class="keywordtype">char</span>* key);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><a class="code hl_struct" href="structMetaData.html">MetaData</a>* <a class="code hl_function" href="hash__map_8h.html#ad6e8e17031b5696f8f7b5aa0bdf0dd09">get</a>(<span class="keywordtype">char</span>* key);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">bool</span> <a class="code hl_function" href="hash__map_8h.html#ad2ea2fd6029bee1401ea7b9c15ea0736">put</a>(<span class="keywordtype">char</span>* key, <a class="code hl_struct" href="structMetaData.html">MetaData</a>* item);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">bool</span> <span class="keyword">delete</span>(<span class="keywordtype">char</span>* key);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ahash__map_8h_html_a032503e76d6f69bc67e99e909c8125da"><div class="ttname"><a href="hash__map_8h.html#a032503e76d6f69bc67e99e909c8125da">TABLE_SIZE</a></div><div class="ttdeci">#define TABLE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00009">hash_map.h:9</a></div></div>
+<div class="ttc" id="ahash__map_8h_html_a32a183eeadf922d255d06a4e4f2aca66"><div class="ttname"><a href="hash__map_8h.html#a32a183eeadf922d255d06a4e4f2aca66">KEY_LEN</a></div><div class="ttdeci">#define KEY_LEN</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00010">hash_map.h:10</a></div></div>
+<div class="ttc" id="ahash__map_8h_html_a52b670b1d7e76fe61133b6f7f16fb8eb"><div class="ttname"><a href="hash__map_8h.html#a52b670b1d7e76fe61133b6f7f16fb8eb">HashNode</a></div><div class="ttdeci">struct __hash_node HashNode</div></div>
+<div class="ttc" id="ahash__map_8h_html_aa866a3628609541fccfcb37acb2bddac"><div class="ttname"><a href="hash__map_8h.html#aa866a3628609541fccfcb37acb2bddac">newHashMap</a></div><div class="ttdeci">HashMap * newHashMap()</div><div class="ttdoc">Retorna um ponteiro para struct do tipo HashMap.</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8c_source.html#l00004">hash_map.c:4</a></div></div>
+<div class="ttc" id="ahash__map_8h_html_ab34170680c29aec3de81ba8d3985d78d"><div class="ttname"><a href="hash__map_8h.html#ab34170680c29aec3de81ba8d3985d78d">HashMap</a></div><div class="ttdeci">struct __hash_map HashMap</div></div>
+<div class="ttc" id="ahash__map_8h_html_ad2ea2fd6029bee1401ea7b9c15ea0736"><div class="ttname"><a href="hash__map_8h.html#ad2ea2fd6029bee1401ea7b9c15ea0736">put</a></div><div class="ttdeci">bool put(char *key, MetaData *item)</div><div class="ttdoc">Insere um metadado dentro da tabela hash.</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8c_source.html#l00043">hash_map.c:43</a></div></div>
+<div class="ttc" id="ahash__map_8h_html_ad6e8e17031b5696f8f7b5aa0bdf0dd09"><div class="ttname"><a href="hash__map_8h.html#ad6e8e17031b5696f8f7b5aa0bdf0dd09">get</a></div><div class="ttdeci">MetaData * get(char *key)</div><div class="ttdoc">Retorna os metadados que estão inseridos na tabela hash, caso não haja metadados, NULL será retornado...</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8c_source.html#l00037">hash_map.c:37</a></div></div>
+<div class="ttc" id="ameta__data_8h_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="meta__data_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="meta__data_8h_source.html#l00007">meta_data.h:7</a></div></div>
+<div class="ttc" id="astructHashMap_html"><div class="ttname"><a href="structHashMap.html">HashMap</a></div><div class="ttdoc">struct para manipular as funções de inserir, remover e pegar dados da tabela hash</div></div>
+<div class="ttc" id="astructHashNode_html"><div class="ttname"><a href="structHashNode.html">HashNode</a></div><div class="ttdoc">struct que representa os nós da tabela hash</div></div>
+<div class="ttc" id="astructMetaData_html"><div class="ttname"><a href="structMetaData.html">MetaData</a></div><div class="ttdoc">struct que representa os metadados de um arquivo</div></div>
+<div class="ttc" id="astruct____hash__map_html"><div class="ttname"><a href="struct____hash__map.html">__hash_map</a></div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00024">hash_map.h:24</a></div></div>
+<div class="ttc" id="astruct____hash__map_html_a5f3cba45cbde0b0073402cef350342d4"><div class="ttname"><a href="struct____hash__map.html#a5f3cba45cbde0b0073402cef350342d4">__hash_map::put</a></div><div class="ttdeci">bool(* put)(char *key, MetaData *item)</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00026">hash_map.h:26</a></div></div>
+<div class="ttc" id="astruct____hash__node_html"><div class="ttname"><a href="struct____hash__node.html">__hash_node</a></div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00015">hash_map.h:15</a></div></div>
+<div class="ttc" id="astruct____hash__node_html_a801f233c914e0b07833627834d53206a"><div class="ttname"><a href="struct____hash__node.html#a801f233c914e0b07833627834d53206a">__hash_node::key</a></div><div class="ttdeci">char key[KEY_LEN]</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00016">hash_map.h:16</a></div></div>
+<div class="ttc" id="astruct____hash__node_html_aa2bf2746128a980e1fcce2c763c1f158"><div class="ttname"><a href="struct____hash__node.html#aa2bf2746128a980e1fcce2c763c1f158">__hash_node::next</a></div><div class="ttdeci">struct __hash_node * next</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00018">hash_map.h:18</a></div></div>
+<div class="ttc" id="astruct____hash__node_html_aee73043cf231e329369adc229e344b84"><div class="ttname"><a href="struct____hash__node.html#aee73043cf231e329369adc229e344b84">__hash_node::item</a></div><div class="ttdeci">MetaData * item</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8h_source.html#l00017">hash_map.h:17</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>
