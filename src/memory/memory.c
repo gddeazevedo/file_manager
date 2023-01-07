@@ -59,6 +59,7 @@ bool remove_from(Memory* mem, char* file_name) {
     while (index != -1 && node != NULL) {
         mem->ram[index] = NULL;
         index = node->next;
+        free(node);
         node = mem->ram[index];
         mem->occupied -= 1;
     }
