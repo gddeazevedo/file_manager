@@ -35,13 +35,13 @@ static HashNode* search_in_table(char* key) {
     return node;
 }
 
-int get(char* key) {
+MetaData* get(char* key) {
     HashNode* node = search_in_table(key);
-    if (node == NULL) return -1;
+    if (node == NULL) return NULL;
     return node->item;
 }
 
-bool put(char* key, uint item) {
+bool put(char* key, MetaData* item) {
     HashNode* node = search_in_table(key);
 
     if (node == NULL) {
