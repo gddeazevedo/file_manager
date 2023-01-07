@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['searchcontent_5',['SearchContent',['../structSearchContent.html',1,'']]]
+  ['memory_0',['Memory',['../structMemory.html',1,'']]],
+  ['metadata_1',['MetaData',['../structMetaData.html',1,'']]]
 ];

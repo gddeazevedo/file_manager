@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['insert_5ffile_0',['insert_file',['../file__manager_8c.html#a5a4e323568717bd7598c7a00bb7d5b6a',1,'insert_file(Memory *mem):&#160;file_manager.c'],['../file__manager_8h.html#a5a4e323568717bd7598c7a00bb7d5b6a',1,'insert_file(Memory *mem):&#160;file_manager.c']]],
-  ['insert_5fin_1',['insert_in',['../memory_8c.html#a1deb2840b4b34dda12740ca515589627',1,'insert_in(Memory *mem, char *file_content, char *file_name):&#160;memory.c'],['../memory_8h.html#a1deb2840b4b34dda12740ca515589627',1,'insert_in(Memory *mem, char *file_content, char *file_name):&#160;memory.c']]]
+  ['delete_0',['delete',['../hash__map_8c.html#a33b1480dae7021f667e0d2d862fd119d',1,'delete(char *key):&#160;hash_map.c'],['../hash__map_8h.html#a33b1480dae7021f667e0d2d862fd119d',1,'delete(char *key):&#160;hash_map.c']]]
 ];

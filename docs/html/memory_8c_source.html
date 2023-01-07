@@ -79,95 +79,86 @@ $(function() {
 <a href="memory_8c.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="memory_8h.html">memory.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">    4</a></span><a class="code hl_struct" href="struct____memory.html">Memory</a>* <a class="code hl_function" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>() {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_struct" href="struct____memory.html">Memory</a>* mem = (<a class="code hl_struct" href="struct____memory.html">Memory</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct____memory.html">Memory</a>));</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    mem-&gt;<a class="code hl_variable" href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">occupied</a> = 0;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">    4</a></span><a class="code hl_struct" href="structMemory.html">Memory</a>* <a class="code hl_function" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>() {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_struct" href="structMemory.html">Memory</a>* mem = (<a class="code hl_struct" href="structMemory.html">Memory</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMemory.html">Memory</a>));</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    mem-&gt;occupied = 0;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a>; i++) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[i] = NULL;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        mem-&gt;ram[i] = NULL;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> mem;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">   15</a></span><a class="code hl_struct" href="struct____node.html">Node</a>* <a class="code hl_function" href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">newNode</a>(<span class="keywordtype">char</span>* file_content, <span class="keywordtype">char</span>* file_name) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_struct" href="struct____node.html">Node</a>* node = (<a class="code hl_struct" href="struct____node.html">Node</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct____node.html">Node</a>));</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    strcpy(node-&gt;<a class="code hl_variable" href="struct____node.html#af0632033c8117705e39ffada92e096bb">file_content</a>, file_content);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    strcpy(node-&gt;<a class="code hl_variable" href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">file_name</a>, file_name);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    node-&gt;<a class="code hl_variable" href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">next</a> = -1;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">   15</a></span><a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">newNode</a>(<span class="keywordtype">char</span>* file_content, <span class="keywordtype">char</span>* file_name) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_struct" href="structNode.html">Node</a>* node = (<a class="code hl_struct" href="structNode.html">Node</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structNode.html">Node</a>));</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    strcpy(node-&gt;file_content, file_content);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    strcpy(node-&gt;file_name, file_name);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    node-&gt;next = -1;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> node;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="memory_8c.html#a1deb2840b4b34dda12740ca515589627">   23</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="memory_8c.html#a1deb2840b4b34dda12740ca515589627">insert_in</a>(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">char</span>* file_content, <span class="keywordtype">char</span>* file_name) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (mem-&gt;<a class="code hl_variable" href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">occupied</a> == <a class="code hl_define" href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="memory_8c.html#a158621dbaa1fb59afa54d275bd27e6c9">   23</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="memory_8c.html#a158621dbaa1fb59afa54d275bd27e6c9">insert_in</a>(<a class="code hl_struct" href="structMemory.html">Memory</a>* mem, <a class="code hl_struct" href="structMetaData.html">MetaData</a>* data, <span class="keywordtype">char</span>* file_content, <span class="keywordtype">char</span>* file_name) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (mem-&gt;occupied == <a class="code hl_define" href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> prev_node = 0;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> current_node = 0;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">while</span> (current_node &lt; MEMORY_LENGTH &amp;&amp; mem-&gt;ram[current_node] != NULL) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        current_node++;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (mem-&gt;occupied == 0) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        prev_node = 0;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[current_node] = <a class="code hl_function" href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">newNode</a>(file_content, file_name);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (strcmp(mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[prev_node]-&gt;<a class="code hl_variable" href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">file_name</a>, file_name) != 0) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[prev_node]-&gt;<a class="code hl_variable" href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">next</a> = -1;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        prev_node = current_node;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (prev_node != current_node) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[prev_node]-&gt;<a class="code hl_variable" href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">next</a> = current_node;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        prev_node = current_node;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    mem-&gt;<a class="code hl_variable" href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">occupied</a> += 1;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">while</span> (current_node &lt; MEMORY_LENGTH &amp;&amp; mem-&gt;ram[current_node] != NULL) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        current_node++;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    mem-&gt;ram[current_node] = <a class="code hl_function" href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">newNode</a>(file_content, file_name);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span> (strcmp(mem-&gt;ram[prev_node]-&gt;file_name, file_name) != 0) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        mem-&gt;ram[prev_node]-&gt;next = -1;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        prev_node = current_node;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        data-&gt;file_first_index = current_node;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (prev_node != current_node) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        mem-&gt;ram[prev_node]-&gt;next = current_node;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        prev_node = current_node;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="memory_8c.html#a451cd769d2d99ac2e1405f3127e19134">   48</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="memory_8c.html#a451cd769d2d99ac2e1405f3127e19134">remove_from</a>(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">char</span>* file_name) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> index = <a class="code hl_function" href="memory_8c.html#a9628fc409e172f17b4c439d9b40114c6">search</a>(mem, file_name);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (index == -1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    mem-&gt;occupied += 1;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_struct" href="struct____node.html">Node</a>* node = mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[index];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">while</span> (index != -1 &amp;&amp; node != NULL) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[index] = NULL;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        index = node-&gt;<a class="code hl_variable" href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">next</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        node = mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[index];</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="memory_8c.html#a9628fc409e172f17b4c439d9b40114c6">   64</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="memory_8c.html#a9628fc409e172f17b4c439d9b40114c6">search</a>(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">char</span>* file_name) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">while</span> (i &lt; <a class="code hl_define" href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a>) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_struct" href="struct____node.html">Node</a>* current = mem-&gt;<a class="code hl_variable" href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">ram</a>[i];</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="memory_8c.html#a07df5e3d421e749250f7b75a15e3772c">   53</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="memory_8c.html#a07df5e3d421e749250f7b75a15e3772c">remove_from</a>(<a class="code hl_struct" href="structMemory.html">Memory</a>* mem, <a class="code hl_struct" href="structHashMap.html">HashMap</a>* map, <span class="keywordtype">char</span>* file_name) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_struct" href="structMetaData.html">MetaData</a>* meta_data = map-&gt;get(file_name);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (meta_data == NULL) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span> index = meta_data-&gt;file_first_index;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_struct" href="structNode.html">Node</a>* node = mem-&gt;ram[index];</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">while</span> (index != -1 &amp;&amp; node != NULL) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        mem-&gt;ram[index] = NULL;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        index = node-&gt;next;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        free(node);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        node = mem-&gt;ram[index];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        mem-&gt;occupied -= 1;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">if</span> (current != NULL &amp;&amp; strcmp(current-&gt;<a class="code hl_variable" href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">file_name</a>, file_name) == 0) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">return</span> i;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        i++;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
-<div class="ttc" id="amemory_8c_html_a1deb2840b4b34dda12740ca515589627"><div class="ttname"><a href="memory_8c.html#a1deb2840b4b34dda12740ca515589627">insert_in</a></div><div class="ttdeci">bool insert_in(Memory *mem, char *file_content, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00023">memory.c:23</a></div></div>
-<div class="ttc" id="amemory_8c_html_a451cd769d2d99ac2e1405f3127e19134"><div class="ttname"><a href="memory_8c.html#a451cd769d2d99ac2e1405f3127e19134">remove_from</a></div><div class="ttdeci">bool remove_from(Memory *mem, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00048">memory.c:48</a></div></div>
-<div class="ttc" id="amemory_8c_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
-<div class="ttc" id="amemory_8c_html_a9628fc409e172f17b4c439d9b40114c6"><div class="ttname"><a href="memory_8c.html#a9628fc409e172f17b4c439d9b40114c6">search</a></div><div class="ttdeci">unsigned int search(Memory *mem, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00064">memory.c:64</a></div></div>
-<div class="ttc" id="amemory_8c_html_adf334682f2f23f1138898bbd669667ca"><div class="ttname"><a href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">newNode</a></div><div class="ttdeci">Node * newNode(char *file_content, char *file_name)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00015">memory.c:15</a></div></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    map-&gt;delete(file_name);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="ttc" id="amemory_8c_html_a07df5e3d421e749250f7b75a15e3772c"><div class="ttname"><a href="memory_8c.html#a07df5e3d421e749250f7b75a15e3772c">remove_from</a></div><div class="ttdeci">bool remove_from(Memory *mem, HashMap *map, char *file_name)</div><div class="ttdoc">Remove da memória virtual um arquivo.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00053">memory.c:53</a></div></div>
+<div class="ttc" id="amemory_8c_html_a158621dbaa1fb59afa54d275bd27e6c9"><div class="ttname"><a href="memory_8c.html#a158621dbaa1fb59afa54d275bd27e6c9">insert_in</a></div><div class="ttdeci">bool insert_in(Memory *mem, MetaData *data, char *file_content, char *file_name)</div><div class="ttdoc">Insere um nó na lista encadeada dentro da memória virtual returna true caso.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00023">memory.c:23</a></div></div>
+<div class="ttc" id="amemory_8c_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdoc">Retorna um ponteiro de memória virtual.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
+<div class="ttc" id="amemory_8c_html_adf334682f2f23f1138898bbd669667ca"><div class="ttname"><a href="memory_8c.html#adf334682f2f23f1138898bbd669667ca">newNode</a></div><div class="ttdeci">Node * newNode(char *file_content, char *file_name)</div><div class="ttdoc">Retorna um ponteiro de nó de lista encadeada virtual.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00015">memory.c:15</a></div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
-<div class="ttc" id="amemory_8h_html_a55ab828f2af437ffb05fd2f33f1acb18"><div class="ttname"><a href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a></div><div class="ttdeci">#define MEMORY_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00010">memory.h:10</a></div></div>
-<div class="ttc" id="astruct____memory_html"><div class="ttname"><a href="struct____memory.html">__memory</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00018">memory.h:18</a></div></div>
-<div class="ttc" id="astruct____memory_html_a41958d5bc5504f73bbbce62439ac47e6"><div class="ttname"><a href="struct____memory.html#a41958d5bc5504f73bbbce62439ac47e6">__memory::ram</a></div><div class="ttdeci">Node * ram[MEMORY_LENGTH]</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00019">memory.h:19</a></div></div>
-<div class="ttc" id="astruct____memory_html_ae75b0c1d6c78e99469773e29b9749c93"><div class="ttname"><a href="struct____memory.html#ae75b0c1d6c78e99469773e29b9749c93">__memory::occupied</a></div><div class="ttdeci">unsigned int occupied</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00020">memory.h:20</a></div></div>
-<div class="ttc" id="astruct____node_html"><div class="ttname"><a href="struct____node.html">__node</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00012">memory.h:12</a></div></div>
-<div class="ttc" id="astruct____node_html_a142a1b51e133e50c0a72b175958ac412"><div class="ttname"><a href="struct____node.html#a142a1b51e133e50c0a72b175958ac412">__node::next</a></div><div class="ttdeci">int next</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00015">memory.h:15</a></div></div>
-<div class="ttc" id="astruct____node_html_aa82337d97061de746ab4dc1dab2324f5"><div class="ttname"><a href="struct____node.html#aa82337d97061de746ab4dc1dab2324f5">__node::file_name</a></div><div class="ttdeci">char file_name[50]</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00014">memory.h:14</a></div></div>
-<div class="ttc" id="astruct____node_html_af0632033c8117705e39ffada92e096bb"><div class="ttname"><a href="struct____node.html#af0632033c8117705e39ffada92e096bb">__node::file_content</a></div><div class="ttdeci">char file_content[SIZE_FILE_CONTENT]</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00013">memory.h:13</a></div></div>
+<div class="ttc" id="amemory_8h_html_a55ab828f2af437ffb05fd2f33f1acb18"><div class="ttname"><a href="memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18">MEMORY_LENGTH</a></div><div class="ttdeci">#define MEMORY_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00012">memory.h:12</a></div></div>
+<div class="ttc" id="astructHashMap_html"><div class="ttname"><a href="structHashMap.html">HashMap</a></div><div class="ttdoc">struct para manipular as funções de inserir, remover e pegar dados da tabela hash</div></div>
+<div class="ttc" id="astructMemory_html"><div class="ttname"><a href="structMemory.html">Memory</a></div><div class="ttdoc">struct que representa a memória virtual</div></div>
+<div class="ttc" id="astructMetaData_html"><div class="ttname"><a href="structMetaData.html">MetaData</a></div><div class="ttdoc">struct que representa os metadados de um arquivo</div></div>
+<div class="ttc" id="astructNode_html"><div class="ttname"><a href="structNode.html">Node</a></div><div class="ttdoc">struct que representa o nó de uma lista encadeada virtual</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

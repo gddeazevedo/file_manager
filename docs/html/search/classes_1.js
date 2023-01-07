@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linkedlist_4',['LinkedList',['../structLinkedList.html',1,'']]]
+  ['hashmap_0',['HashMap',['../structHashMap.html',1,'']]],
+  ['hashnode_1',['HashNode',['../structHashNode.html',1,'']]]
 ];

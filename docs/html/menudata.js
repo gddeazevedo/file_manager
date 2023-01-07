@@ -33,7 +33,20 @@ var menudata={children:[
 {text:"Arquivos",url:"files.html",children:[
 {text:"Lista de Arquivos",url:"files.html"},
 {text:"Ítens globais",url:"globals.html",children:[
-{text:"Todos",url:"globals.html"},
+{text:"Todos",url:"globals.html",children:[
+{text:"d",url:"globals.html#index_d"},
+{text:"e",url:"globals.html#index_e"},
+{text:"g",url:"globals.html#index_g"},
+{text:"h",url:"globals.html#index_h"},
+{text:"i",url:"globals.html#index_i"},
+{text:"k",url:"globals.html#index_k"},
+{text:"m",url:"globals.html#index_m"},
+{text:"n",url:"globals.html#index_n"},
+{text:"p",url:"globals.html#index_p"},
+{text:"r",url:"globals.html#index_r"},
+{text:"s",url:"globals.html#index_s"},
+{text:"t",url:"globals.html#index_t"},
+{text:"u",url:"globals.html#index_u"}]},
 {text:"Funções",url:"globals_func.html"},
 {text:"Definições de Tipos",url:"globals_type.html"},
 {text:"Definições e Macros",url:"globals_defs.html"}]}]}]}

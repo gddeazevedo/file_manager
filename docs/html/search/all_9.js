@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['search_0',['search',['../memory_8c.html#a9628fc409e172f17b4c439d9b40114c6',1,'search(Memory *mem, char *file_name):&#160;memory.c'],['../memory_8h.html#a9628fc409e172f17b4c439d9b40114c6',1,'search(Memory *mem, char *file_name):&#160;memory.c']]],
-  ['show_5ffile_1',['show_file',['../file__manager_8c.html#a9a9e17552de13935c773dd8b3af89219',1,'show_file(Memory *mem):&#160;file_manager.c'],['../file__manager_8h.html#a9a9e17552de13935c773dd8b3af89219',1,'show_file(Memory *mem):&#160;file_manager.c']]],
-  ['show_5ffile_2',['SHOW_FILE',['../cli_8h.html#a21677190a020ea98ec0c04bbd80159b3',1,'cli.h']]],
-  ['size_5ffile_5fcontent_3',['SIZE_FILE_CONTENT',['../memory_8h.html#a5accf164bc4835d6d3a74aa2b7266ea7',1,'memory.h']]]
+  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
+  ['memory_2',['Memory',['../structMemory.html',1,'Memory'],['../memory_8h.html#a87f8bd5edefb791e50e3d62c45d818f6',1,'Memory():&#160;memory.h']]],
+  ['memory_2ec_3',['memory.c',['../memory_8c.html',1,'']]],
+  ['memory_2eh_4',['memory.h',['../memory_8h.html',1,'']]],
+  ['memory_5flength_5',['MEMORY_LENGTH',['../memory_8h.html#a55ab828f2af437ffb05fd2f33f1acb18',1,'memory.h']]],
+  ['meta_5fdata_2ec_6',['meta_data.c',['../meta__data_8c.html',1,'']]],
+  ['meta_5fdata_2eh_7',['meta_data.h',['../meta__data_8h.html',1,'']]],
+  ['metadata_8',['MetaData',['../structMetaData.html',1,'MetaData'],['../meta__data_8h.html#a91c622c5e3698c3b50d00a6f1e960828',1,'MetaData():&#160;meta_data.h']]]
 ];

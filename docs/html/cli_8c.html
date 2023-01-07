@@ -108,15 +108,18 @@ Funções</h2></td></tr>
 
 <p class="definition">Definição na linha <a class="el" href="cli_8c_source.html#l00003">3</a> do arquivo <a class="el" href="cli_8c_source.html">cli.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    3</span>               {</div>
-<div class="line"><span class="lineno">    4</span>    <a class="code hl_struct" href="struct____memory.html">Memory</a>* mem = <a class="code hl_function" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>();</div>
-<div class="line"><span class="lineno">    5</span> </div>
-<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><span class="lineno">    7</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">    8</span>        show_menu(mem);</div>
-<div class="line"><span class="lineno">    9</span>    }</div>
-<div class="line"><span class="lineno">   10</span>}</div>
-<div class="ttc" id="amemory_8c_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
-<div class="ttc" id="astruct____memory_html"><div class="ttname"><a href="struct____memory.html">__memory</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00018">memory.h:18</a></div></div>
+<div class="line"><span class="lineno">    4</span>    <a class="code hl_struct" href="structMemory.html">Memory</a>* mem = <a class="code hl_function" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>();</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_struct" href="structHashMap.html">HashMap</a>* map = <a class="code hl_function" href="hash__map_8c.html#aa866a3628609541fccfcb37acb2bddac">newHashMap</a>();</div>
+<div class="line"><span class="lineno">    6</span> </div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">    8</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">    9</span>        show_menu(mem, map);</div>
+<div class="line"><span class="lineno">   10</span>    }</div>
+<div class="line"><span class="lineno">   11</span>}</div>
+<div class="ttc" id="ahash__map_8c_html_aa866a3628609541fccfcb37acb2bddac"><div class="ttname"><a href="hash__map_8c.html#aa866a3628609541fccfcb37acb2bddac">newHashMap</a></div><div class="ttdeci">HashMap * newHashMap()</div><div class="ttdoc">Retorna um ponteiro para struct do tipo HashMap.</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8c_source.html#l00004">hash_map.c:4</a></div></div>
+<div class="ttc" id="amemory_8c_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdoc">Retorna um ponteiro de memória virtual.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
+<div class="ttc" id="astructHashMap_html"><div class="ttname"><a href="structHashMap.html">HashMap</a></div><div class="ttdoc">struct para manipular as funções de inserir, remover e pegar dados da tabela hash</div></div>
+<div class="ttc" id="astructMemory_html"><div class="ttname"><a href="structMemory.html">Memory</a></div><div class="ttdoc">struct que representa a memória virtual</div></div>
 </div><!-- fragment -->
 </div>
 </div>

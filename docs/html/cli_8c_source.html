@@ -79,66 +79,69 @@ $(function() {
 <a href="cli_8c.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="cli_8h.html">cli.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="cli_8c.html#a1d86d90edeb9bedb307dcc4cc1255622">    3</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="cli_8c.html#a1d86d90edeb9bedb307dcc4cc1255622">run_cli</a>() {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <a class="code hl_struct" href="struct____memory.html">Memory</a>* mem = <a class="code hl_function" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>();</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        show_menu(mem);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">static</span> <span class="keywordtype">void</span> show_menu(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> input = -1;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">while</span> (</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        input != 0 &amp;&amp;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        input != 1 &amp;&amp;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        input != 2 &amp;&amp;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        input != 3</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        printf(<span class="stringliteral">&quot;----Bem vindo ao gerenciador de arquivos!----\n&quot;</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        printf(<span class="stringliteral">&quot;(0) Sair\n&quot;</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        printf(<span class="stringliteral">&quot;(1) Inserir um novo arquivo\n&quot;</span>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        printf(<span class="stringliteral">&quot;(2) Remover arquivo\n&quot;</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        printf(<span class="stringliteral">&quot;(3) Buscar arquivo\n&quot;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        printf(<span class="stringliteral">&quot;Selecionar opção: &quot;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;input);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    select_option(mem, input);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">static</span> <span class="keywordtype">void</span> select_option(<a class="code hl_struct" href="struct____memory.html">Memory</a>* mem, <span class="keywordtype">int</span> input) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">switch</span> (input)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#ad111e603bbebe5d87f6bc39264ce4733">EXIT</a>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            exit(0);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#ae153badf1c3f70ff260d548b4b0a59be">INSERT_FILE</a>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_function" href="file__manager_8c.html#a5a4e323568717bd7598c7a00bb7d5b6a">insert_file</a>(mem);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#a26897d4a481db39514d1fa84d0fc659e">REMOVE_FILE</a>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <a class="code hl_function" href="file__manager_8c.html#ab5eb7a23e5acca8f0ed071fbf95b14a2">remove_file</a>(mem);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#a21677190a020ea98ec0c04bbd80159b3">SHOW_FILE</a>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <a class="code hl_function" href="file__manager_8c.html#a9a9e17552de13935c773dd8b3af89219">show_file</a>(mem);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <a class="code hl_struct" href="structMemory.html">Memory</a>* mem = <a class="code hl_function" href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a>();</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_struct" href="structHashMap.html">HashMap</a>* map = <a class="code hl_function" href="hash__map_8c.html#aa866a3628609541fccfcb37acb2bddac">newHashMap</a>();</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        show_menu(mem, map);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">static</span> <span class="keywordtype">void</span> show_menu(<a class="code hl_struct" href="structMemory.html">Memory</a>* mem, <a class="code hl_struct" href="structHashMap.html">HashMap</a>* map) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> input = -1;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">while</span> (</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        input != 0 &amp;&amp;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        input != 1 &amp;&amp;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        input != 2 &amp;&amp;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        input != 3</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    ) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        printf(<span class="stringliteral">&quot;----Bem vindo ao gerenciador de arquivos!----\n&quot;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        printf(<span class="stringliteral">&quot;(0) Sair\n&quot;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        printf(<span class="stringliteral">&quot;(1) Inserir um novo arquivo\n&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        printf(<span class="stringliteral">&quot;(2) Remover arquivo\n&quot;</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        printf(<span class="stringliteral">&quot;(3) Buscar arquivo\n&quot;</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        printf(<span class="stringliteral">&quot;Selecionar opção: &quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;input);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    select_option(mem, map, input);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">static</span> <span class="keywordtype">void</span> select_option(<a class="code hl_struct" href="structMemory.html">Memory</a>* mem, <a class="code hl_struct" href="structHashMap.html">HashMap</a>* map, <span class="keywordtype">int</span> input) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">switch</span> (input)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#ad111e603bbebe5d87f6bc39264ce4733">EXIT</a>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            exit(0);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#ae153badf1c3f70ff260d548b4b0a59be">INSERT_FILE</a>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_function" href="file__manager_8c.html#a735ad10fc3701156bbf858323ce3b616">insert_file</a>(mem, map);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#a26897d4a481db39514d1fa84d0fc659e">REMOVE_FILE</a>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_function" href="file__manager_8c.html#a08fd695471f1ea33740cf160114ea472">remove_file</a>(mem, map);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="cli_8h.html#a21677190a020ea98ec0c04bbd80159b3">SHOW_FILE</a>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <a class="code hl_function" href="file__manager_8c.html#ac9e40243d9a57176271b73bea65f2b06">show_file</a>(mem, map);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="ttc" id="acli_8c_html_a1d86d90edeb9bedb307dcc4cc1255622"><div class="ttname"><a href="cli_8c.html#a1d86d90edeb9bedb307dcc4cc1255622">run_cli</a></div><div class="ttdeci">void run_cli()</div><div class="ttdoc">Inícia a interface de comando de linha (command line interface)</div><div class="ttdef"><b>Definition:</b> <a href="cli_8c_source.html#l00003">cli.c:3</a></div></div>
 <div class="ttc" id="acli_8h_html"><div class="ttname"><a href="cli_8h.html">cli.h</a></div></div>
 <div class="ttc" id="acli_8h_html_a21677190a020ea98ec0c04bbd80159b3"><div class="ttname"><a href="cli_8h.html#a21677190a020ea98ec0c04bbd80159b3">SHOW_FILE</a></div><div class="ttdeci">#define SHOW_FILE</div><div class="ttdef"><b>Definition:</b> <a href="cli_8h_source.html#l00011">cli.h:11</a></div></div>
 <div class="ttc" id="acli_8h_html_a26897d4a481db39514d1fa84d0fc659e"><div class="ttname"><a href="cli_8h.html#a26897d4a481db39514d1fa84d0fc659e">REMOVE_FILE</a></div><div class="ttdeci">#define REMOVE_FILE</div><div class="ttdef"><b>Definition:</b> <a href="cli_8h_source.html#l00010">cli.h:10</a></div></div>
 <div class="ttc" id="acli_8h_html_ad111e603bbebe5d87f6bc39264ce4733"><div class="ttname"><a href="cli_8h.html#ad111e603bbebe5d87f6bc39264ce4733">EXIT</a></div><div class="ttdeci">#define EXIT</div><div class="ttdef"><b>Definition:</b> <a href="cli_8h_source.html#l00008">cli.h:8</a></div></div>
 <div class="ttc" id="acli_8h_html_ae153badf1c3f70ff260d548b4b0a59be"><div class="ttname"><a href="cli_8h.html#ae153badf1c3f70ff260d548b4b0a59be">INSERT_FILE</a></div><div class="ttdeci">#define INSERT_FILE</div><div class="ttdef"><b>Definition:</b> <a href="cli_8h_source.html#l00009">cli.h:9</a></div></div>
-<div class="ttc" id="afile__manager_8c_html_a5a4e323568717bd7598c7a00bb7d5b6a"><div class="ttname"><a href="file__manager_8c.html#a5a4e323568717bd7598c7a00bb7d5b6a">insert_file</a></div><div class="ttdeci">void insert_file(Memory *mem)</div><div class="ttdef"><b>Definition:</b> <a href="file__manager_8c_source.html#l00004">file_manager.c:4</a></div></div>
-<div class="ttc" id="afile__manager_8c_html_a9a9e17552de13935c773dd8b3af89219"><div class="ttname"><a href="file__manager_8c.html#a9a9e17552de13935c773dd8b3af89219">show_file</a></div><div class="ttdeci">void show_file(Memory *mem)</div><div class="ttdef"><b>Definition:</b> <a href="file__manager_8c_source.html#l00066">file_manager.c:66</a></div></div>
-<div class="ttc" id="afile__manager_8c_html_ab5eb7a23e5acca8f0ed071fbf95b14a2"><div class="ttname"><a href="file__manager_8c.html#ab5eb7a23e5acca8f0ed071fbf95b14a2">remove_file</a></div><div class="ttdeci">void remove_file(Memory *mem)</div><div class="ttdef"><b>Definition:</b> <a href="file__manager_8c_source.html#l00044">file_manager.c:44</a></div></div>
-<div class="ttc" id="amemory_8c_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
-<div class="ttc" id="astruct____memory_html"><div class="ttname"><a href="struct____memory.html">__memory</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00018">memory.h:18</a></div></div>
+<div class="ttc" id="afile__manager_8c_html_a08fd695471f1ea33740cf160114ea472"><div class="ttname"><a href="file__manager_8c.html#a08fd695471f1ea33740cf160114ea472">remove_file</a></div><div class="ttdeci">void remove_file(Memory *mem, HashMap *map)</div><div class="ttdoc">Remove um arquivo da memória virtual.</div><div class="ttdef"><b>Definition:</b> <a href="file__manager_8c_source.html#l00068">file_manager.c:68</a></div></div>
+<div class="ttc" id="afile__manager_8c_html_a735ad10fc3701156bbf858323ce3b616"><div class="ttname"><a href="file__manager_8c.html#a735ad10fc3701156bbf858323ce3b616">insert_file</a></div><div class="ttdeci">void insert_file(Memory *mem, HashMap *map)</div><div class="ttdoc">Insere um arquivo na memória virtual.</div><div class="ttdef"><b>Definition:</b> <a href="file__manager_8c_source.html#l00026">file_manager.c:26</a></div></div>
+<div class="ttc" id="afile__manager_8c_html_ac9e40243d9a57176271b73bea65f2b06"><div class="ttname"><a href="file__manager_8c.html#ac9e40243d9a57176271b73bea65f2b06">show_file</a></div><div class="ttdeci">void show_file(Memory *mem, HashMap *map)</div><div class="ttdoc">Mostra um arquivo que está inserido.</div><div class="ttdef"><b>Definition:</b> <a href="file__manager_8c_source.html#l00084">file_manager.c:84</a></div></div>
+<div class="ttc" id="ahash__map_8c_html_aa866a3628609541fccfcb37acb2bddac"><div class="ttname"><a href="hash__map_8c.html#aa866a3628609541fccfcb37acb2bddac">newHashMap</a></div><div class="ttdeci">HashMap * newHashMap()</div><div class="ttdoc">Retorna um ponteiro para struct do tipo HashMap.</div><div class="ttdef"><b>Definition:</b> <a href="hash__map_8c_source.html#l00004">hash_map.c:4</a></div></div>
+<div class="ttc" id="amemory_8c_html_a804d74b6a64f2c4f33454d62f6606644"><div class="ttname"><a href="memory_8c.html#a804d74b6a64f2c4f33454d62f6606644">newMemory</a></div><div class="ttdeci">Memory * newMemory()</div><div class="ttdoc">Retorna um ponteiro de memória virtual.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8c_source.html#l00004">memory.c:4</a></div></div>
+<div class="ttc" id="astructHashMap_html"><div class="ttname"><a href="structHashMap.html">HashMap</a></div><div class="ttdoc">struct para manipular as funções de inserir, remover e pegar dados da tabela hash</div></div>
+<div class="ttc" id="astructMemory_html"><div class="ttname"><a href="structMemory.html">Memory</a></div><div class="ttdoc">struct que representa a memória virtual</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
