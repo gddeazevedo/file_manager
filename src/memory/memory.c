@@ -71,19 +71,3 @@ bool remove_from(Memory* mem, HashMap* map, char* file_name) {
 
     return true;
 }
-
-// int search(Memory* mem, char* file_name) {
-//     int i = 0;
-
-//     while (i < MEMORY_LENGTH) {
-//         Node* current = mem->ram[i];
-
-//         if (current != NULL && strcmp(current->file_name, file_name) == 0) {
-//             return i;
-//         }
-
-//         i++;
-//     }
-
-//     return -1;
-// }
