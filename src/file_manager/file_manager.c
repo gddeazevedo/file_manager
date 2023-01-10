@@ -76,7 +76,12 @@ void remove_file(Memory* mem, HashMap* map) {
         return;
     }
 
-    remove_from(mem, map, file_name);
+    if (!remove_from(mem, map, file_name)) {
+        printf("Arquivo não está cadastrado\n");
+        pause_program();
+        return;
+    }
+    
     printf("Arquivo removido com sucesso!\n");
     pause_program();
 }
